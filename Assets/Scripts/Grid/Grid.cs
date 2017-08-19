@@ -67,6 +67,7 @@ public class Grid : MonoBehaviour {
             var newObstacle = Instantiate(this.RockPrefab);
             newObstacle.transform.SetParent(this.gameObject.transform);
             newObstacle.transform.localPosition = new Vector3(coord.x, 0f, coord.y);
+            newObstacle.transform.Rotate(Vector3.up * Random.Range(0f, 360f));
             this.internalGrid[coord.x, coord.y].Type = GridCell.TerrainType.Rock;
         }
 
@@ -81,6 +82,7 @@ public class Grid : MonoBehaviour {
             var newObstacle = Instantiate(this.CactusPrefab);
             newObstacle.transform.SetParent(this.gameObject.transform);
             newObstacle.transform.localPosition = new Vector3(coord.x, 0f, coord.y);
+            newObstacle.transform.Rotate(Vector3.up * Random.Range(0f, 360f));
             this.internalGrid[coord.x, coord.y].Type = GridCell.TerrainType.Cactus;
         }
 
