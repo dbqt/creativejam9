@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement2 : MonoBehaviour {
 
     public Transform player;
-    public float translationSpeed = 0.01f;
+    public float translationSpeed = 1.0f;
 	
     void FixedUpdate()
     {
