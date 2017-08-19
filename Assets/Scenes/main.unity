@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748169, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1431352709}
   m_LocalRotation: {x: 0.67559016, y: 0, z: 0, w: 0.7372774}
-  m_LocalPosition: {x: 4.25, y: 10, z: 2.5}
+  m_LocalPosition: {x: 4.25, y: 11.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1721456493}
@@ -357,13 +357,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 1482350226839240, guid: 1efeebde47b99104786fc9f8d4da1338, type: 2}
+  RockPrefab: {fileID: 1634608180952214, guid: c370d6c34ea599d419f1d8a063c38b18, type: 2}
+  CactusPrefab: {fileID: 1090796859656586, guid: c257362442a00824ba72c82f79620cb6,
+    type: 2}
   SizeX: 10
   SizeY: 10
   TotalGold: 50
+  NbRocks: 2
+  NbCactus: 2
   Map: {fileID: 1721456493}
   RedXPrefab: {fileID: 1310220974815796, guid: 5c1829d82449fb144a3b7105dc7cce7f, type: 2}
   MapTexture: {fileID: 380745370}
   MapAnimator: {fileID: 1721456494}
+  TimeBeforeHidingMap: 5
 --- !u!4 &1839107866
 Transform:
   m_ObjectHideFlags: 0
@@ -449,10 +455,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068408350}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.40821788, y: 0.23456976, z: -0.10938167, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 30, z: 0}
