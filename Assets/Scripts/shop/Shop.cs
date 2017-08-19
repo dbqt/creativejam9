@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class Shop : MonoBehaviour
 {
 
+    public ShopItemUI[] ShopItems;
     List<ItemTag> items;
 
     public bool showPickAxe, showShield, showShovel, showTNT;
@@ -24,12 +26,17 @@ public class Shop : MonoBehaviour
     {
         readTextFile();
 
-       /* Debug.Log(items.Count);
+        //Debug.Log(items.Count);
 
+        int i = 0;
         foreach (ItemTag it in items)
         {
-            Debug.Log(it.name +" "+it.price);
-        }*/
+            //Debug.Log(it.name +" "+it.price);
+            ShopItems[i].Name.text = it.name;
+            ShopItems[i].Price.text = ""+it.price;
+
+            i++;
+        }
     }
 
     void showTools(GameObject player)
@@ -98,4 +105,12 @@ public class Shop : MonoBehaviour
                 return false;
         }
     }
+
+    
 }
+
+[System.Serializable]
+public struct ShopItemUI {
+        public Text Name;
+        public Text Price;
+    }
