@@ -16,6 +16,9 @@ public class Grid : MonoBehaviour {
     public int NbRocks = 2;
     public int NbCactus = 2;
 
+    private float internalTimer = 0f;
+    private bool roundStarted = false;
+
     [Header("Map")]
 
     public Transform Map;
@@ -35,6 +38,8 @@ public class Grid : MonoBehaviour {
 		this.internalGrid = new GridCell[SizeX, SizeY];
         this.mapMarks = new HashSet<Coordinates>();
         this.obstacles = new HashSet<Coordinates>();
+
+        this.roundStarted = false;
 
         // Create grid
         for(int i = 0; i < SizeX; ++i) {
@@ -98,10 +103,22 @@ public class Grid : MonoBehaviour {
             mark.transform.localRotation = Quaternion.identity;
         }
 
+        ShowHideMap();
+	}
+
+    void Update() {
+        if (this.roundStarted) {
+            this.internalTimer -= Time.deltaTime;
+            if(this.internalTimer <= 0f) {
+                EndRound();
+            }
+        }
+    }
+
+    public void ShowHideMap() {
         ShowMap();
         Invoke("HideMap", this.TimeBeforeHidingMap);
-
-	}
+    }
 
     // Safely get a cell from the grid using coordinates (x, y).
     public GridCell GetCell(int x, int y) {
@@ -114,10 +131,23 @@ public class Grid : MonoBehaviour {
 
     public void ShowMap() {
         MapAnimator.SetTrigger("ShowMap");
+        GameLogic.Instance.StartTimer(this.TimeBeforeHidingMap);
     }
 
     public void HideMap() {
         MapAnimator.SetTrigger("HideMap");
+        Invoke("StartRound", 1f);
+    }
+
+    public void StartRound() {
+        GameLogic.Instance.StartTimer(GameLogic.Instance.RoundDuration);
+        this.internalTimer = GameLogic.Instance.RoundDuration;
+        this.roundStarted = true;
+    }
+
+    public void EndRound() {
+        this.roundStarted = false;
+        GameLogic.Instance.EndRound();
     }
 
     private class Coordinates {

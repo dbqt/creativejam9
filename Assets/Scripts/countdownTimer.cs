@@ -2,29 +2,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class countdownTimer : MonoBehaviour {
 
-    public float timeLeft = 30.0f;
-    public Text timerText;
+    public float StartingTime = 30.0f;
+    private float timeLeft = 30.0f;
+    public String timerText;
+    public bool isTimerActive = false;
 
 	void Start () {
 	}
+
+    // Stops and reset the timer
+    public void ResetTimer() {
+        timeLeft = StartingTime;
+        StopTimer();
+    } 
+
+    // Starts the timer with the indicated time.
+    public void StartTimer(float time) {
+        StartingTime = time;
+        timeLeft = StartingTime;
+        isTimerActive = true;
+    }
+
+    public void StopTimer() {
+        isTimerActive = false;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-       
+        //if not active, skip everything
+        if (!isTimerActive) return;
+
         timeLeft -= Time.deltaTime; 
         
-        if (timeLeft > 0.0f)
-        {
+        if (timeLeft > 0.0f) {
             int timeLeftInt = (int)Convert.ToInt32(timeLeft);
-            timerText.text = timeLeftInt.ToString();
+            timerText = timeLeftInt.ToString();
         }
-
-        else
+        else {
             Debug.Log("Time's up");
+            StopTimer();
+        }
         
 	}
 
