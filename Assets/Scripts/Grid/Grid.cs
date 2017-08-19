@@ -8,6 +8,7 @@ public class Grid : MonoBehaviour {
     public GameObject CellPrefab;
     public GameObject RockPrefab;
     public GameObject CactusPrefab;
+    public Material DugMaterial;
 
     public int SizeX = 10, SizeY = 10;
     public int TotalGold = 50;
@@ -39,7 +40,8 @@ public class Grid : MonoBehaviour {
         for(int i = 0; i < SizeX; ++i) {
             for(int j = 0; j < SizeY; ++j) {
                 this.internalGrid[i, j] = new GridCell();
-                // TODO: Random this.
+                this.internalGrid[i, j].DugMaterial = this.DugMaterial;
+                // TODO: Random terrain.
                 this.internalGrid[i, j].Cell = Instantiate(CellPrefab, new Vector3(i, 0f, j), Quaternion.identity) as GameObject;
                 this.internalGrid[i, j].Cell.transform.SetParent(this.gameObject.transform); // Attach each cell to the grid.
                 this.internalGrid[i, j].Initialize(GridCell.TerrainType.Soil, 0, 3);

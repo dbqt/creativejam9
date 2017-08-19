@@ -7,6 +7,7 @@ public class GridCell : MonoBehaviour {
     public enum TerrainType { Soil, Rock, Cactus }
 
     public GameObject Cell;
+    public Material DugMaterial;
 
     public bool IsHidden = true;
     public TerrainType Type = TerrainType.Soil;
@@ -30,9 +31,14 @@ public class GridCell : MonoBehaviour {
             int goldDug = this.Gold;
             this.Gold = 0;
             this.IsHidden = false;
+            UseDugMaterial();
             return goldDug;
         }
 
         return 0;
+    }
+
+    private void UseDugMaterial(){
+        this.Cell.GetComponent<Renderer>().material = DugMaterial;
     }
 }
