@@ -31,13 +31,13 @@ public class Grid : MonoBehaviour {
     public float TimeBeforeHidingMap = 5f;
 
     private HashSet<Coordinates> mapMarks;
-    private HashSet<Coordinates> obstacles;
+    private List<Coordinates> obstacles;
 
 	// Use this for initialization
 	void Start () {
 		this.internalGrid = new GridCell[SizeX, SizeY];
         this.mapMarks = new HashSet<Coordinates>();
-        this.obstacles = new HashSet<Coordinates>();
+        this.obstacles = new List<Coordinates>();
 
         this.roundStarted = false;
 
@@ -61,34 +61,64 @@ public class Grid : MonoBehaviour {
         }
 
         // Add Obstacles
-        for(int rock = 0; rock < this.NbRocks; rock++) {
-            var coord = new Coordinates{ x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
-            // Make sure we get unique random coords for obstacles.
-            while (this.obstacles.Contains(coord)) {
-                coord.x = Random.Range(0, this.SizeX);
-                coord.y = Random.Range(0, this.SizeY);
+        var obstacleCoord = new Coordinates { x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
+        bool gridCellOccupied = false;
+        for (int rock = 0; rock < this.NbRocks; rock++)
+        {
+            do
+            {                // Make sure we get unique random coords for the Rock.
+                gridCellOccupied = false;
+                for (int i = 0; i < obstacles.Count; i++)
+                {
+                    if (obstacleCoord.x == obstacles[i].x && obstacleCoord.y == obstacles[i].y)
+                    {
+                        gridCellOccupied = true;
+                        break;
+                    }
+                }
+                if (gridCellOccupied == true)
+                {
+                    obstacleCoord = new Coordinates { x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
+                }
             }
-            obstacles.Add(coord);
+            while (gridCellOccupied == true);
+
+            obstacles.Add(obstacleCoord);
             var newObstacle = Instantiate(this.RockPrefab);
             newObstacle.transform.SetParent(this.gameObject.transform);
-            newObstacle.transform.localPosition = new Vector3(coord.x, 0f, coord.y);
+            newObstacle.transform.localPosition = new Vector3(obstacleCoord.x, 0f, obstacleCoord.y);
             newObstacle.transform.Rotate(Vector3.up * Random.Range(0f, 360f));
-            this.internalGrid[coord.x, coord.y].Type = GridCell.TerrainType.Rock;
+            this.internalGrid[obstacleCoord.x, obstacleCoord.y].Type = GridCell.TerrainType.Rock;
         }
 
-        for(int cactus = 0; cactus < this.NbRocks; cactus++) {
-            var coord = new Coordinates{ x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
-            // Make sure we get unique random coords for obstacles.
-            while (this.obstacles.Contains(coord)) {
-                coord.x = Random.Range(0, this.SizeX);
-                coord.y = Random.Range(0, this.SizeY);
+        obstacleCoord = new Coordinates { x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
+        for (int rock = 0; rock < this.NbRocks; rock++)
+        {
+            do
+            {
+                // Make sure we get unique random coords for the Cactus.
+                gridCellOccupied = false;
+                for (int i = 0; i < obstacles.Count; i++)
+                {
+                    if (obstacleCoord.x == obstacles[i].x && obstacleCoord.y == obstacles[i].y)
+                    {
+                        gridCellOccupied = true;
+                        break;
+                    }
+                }
+                if (gridCellOccupied == true)
+                {
+                    obstacleCoord = new Coordinates { x = Random.Range(0, this.SizeX), y = Random.Range(0, this.SizeY) };
+                }
             }
-            obstacles.Add(coord);
+            while (gridCellOccupied == true);
+
+            obstacles.Add(obstacleCoord);
             var newObstacle = Instantiate(this.CactusPrefab);
             newObstacle.transform.SetParent(this.gameObject.transform);
-            newObstacle.transform.localPosition = new Vector3(coord.x, 0f, coord.y);
+            newObstacle.transform.localPosition = new Vector3(obstacleCoord.x, 0f, obstacleCoord.y);
             newObstacle.transform.Rotate(Vector3.up * Random.Range(0f, 360f));
-            this.internalGrid[coord.x, coord.y].Type = GridCell.TerrainType.Cactus;
+            this.internalGrid[obstacleCoord.x, obstacleCoord.y].Type = GridCell.TerrainType.Cactus;
         }
 
         // Populate map
@@ -96,7 +126,7 @@ public class Grid : MonoBehaviour {
         //float middleX = ((float)SizeX) /2f;
         //float middleY = ((float)SizeY) /2f;
 
-        foreach(Coordinates c in this.mapMarks) {
+        foreach (Coordinates c in this.mapMarks) {
             var mark = Instantiate(RedXPrefab) as GameObject;
             mark.transform.SetParent(this.Map);
             mark.transform.localPosition = new Vector3(c.x, 0f, c.y);
