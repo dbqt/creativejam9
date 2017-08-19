@@ -9,13 +9,4 @@ public class PlayerTools : MonoBehaviour
     public Shovel shovel;
     public TNT tnt;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

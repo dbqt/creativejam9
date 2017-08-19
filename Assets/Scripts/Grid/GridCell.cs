@@ -24,8 +24,8 @@ public class GridCell {
     }
 
     // Returns the number of gold dug.
-    public int Dig() {
-        this.HP--;
+    public int Dig(int dmg = 1) {
+        this.HP -= dmg;
 
         if (this.HP <= 0) {
             int goldDug = this.Gold;

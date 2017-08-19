@@ -49,7 +49,7 @@ public class Grid : MonoBehaviour {
                 // TODO: Random terrain.
                 this.internalGrid[i, j].Cell = Instantiate(CellPrefab, new Vector3(i, 0f, j), Quaternion.identity) as GameObject;
                 this.internalGrid[i, j].Cell.transform.SetParent(this.gameObject.transform); // Attach each cell to the grid.
-                this.internalGrid[i, j].Initialize(GridCell.TerrainType.Soil, 0, 3);
+                this.internalGrid[i, j].Initialize(GridCell.TerrainType.Soil, 0, 6);
             }
         }
 
@@ -127,6 +127,10 @@ public class Grid : MonoBehaviour {
             return null;
         } 
         return this.internalGrid[x, y];
+    }
+
+    public int UseTNT(int x, int y, int radius = 3) {
+        return 0;
     }
 
     public void ShowMap() {
