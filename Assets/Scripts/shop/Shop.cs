@@ -24,12 +24,12 @@ public class Shop : MonoBehaviour
     {
         readTextFile();
 
-        Debug.Log(items.Count);
+       /* Debug.Log(items.Count);
 
         foreach (ItemTag it in items)
         {
             Debug.Log(it.name +" "+it.price);
-        }
+        }*/
     }
 
     void showTools(GameObject player)
