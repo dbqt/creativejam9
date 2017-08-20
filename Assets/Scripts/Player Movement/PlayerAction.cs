@@ -69,7 +69,9 @@ public class PlayerAction : MonoBehaviour
         GetStunned();
     }
 
-    public void Dig() {
+    public void Dig()
+    {
+        if (GetComponent<PlayerMovement>().IsStunned()) return;
 
         GridCell cell = this.GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
 
@@ -81,7 +83,7 @@ public class PlayerAction : MonoBehaviour
             } else {
                 goldObtained = cell.Dig(0);
             }
-            //GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
+            GetComponent<PlayerSoundManager>().playDiggingSoundEffect(true,1);
 
         } else {
             //using pickaxe
@@ -92,6 +94,7 @@ public class PlayerAction : MonoBehaviour
             } else {
                 goldObtained = cell.Dig(0);
             }
+            GetComponent<PlayerSoundManager>().playDiggingSoundEffect(false, 1);
         }
 
         if (goldObtained > 0)
