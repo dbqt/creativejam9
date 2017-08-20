@@ -33,7 +33,8 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (GameLogic.Instance != null) {
+        GetComponent<EnvironmentSoundManager>().PlayMenuSoundtrack();
+        if (GameLogic.Instance != null) {
             Destroy(this.gameObject);
             return;
         }
@@ -140,6 +141,7 @@ public class GameLogic : MonoBehaviour {
     }
 
     public void StartRound() {
+        GetComponent<EnvironmentSoundManager>().PlayGameSoundtrack();
         Debug.Log("StartRound");
         // load level
         // start round timer
@@ -169,6 +171,7 @@ public class GameLogic : MonoBehaviour {
     }
 
     public void ShowShop() {
+        GetComponent<EnvironmentSoundManager>().PlayMenuSoundtrack();
         // show shop
         HideEndRoundCanvas();
         this.State = GameState.Shop;
@@ -192,7 +195,6 @@ public class GameLogic : MonoBehaviour {
     }
 
     public void LoadMenu() {
-
         this.State = GameState.Menu;
         SceneManager.LoadScene("mainmenu");
     }
