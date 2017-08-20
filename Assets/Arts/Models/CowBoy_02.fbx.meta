@@ -15,6 +15,40 @@ ModelImporter:
     100014: transform7
     100016: transform8
     100018: transform9
+    100020: pCube31
+    100022: pCube32
+    100024: pCube33
+    100026: pCube34
+    100028: pCube35
+    100030: pCube36
+    100032: polySurface60
+    100034: polySurface61
+    100036: pPipe10
+    100038: pPipe11
+    100040: pPipe3
+    100042: pPipe4
+    100044: pPipe5
+    100046: pPipe6
+    100048: pPipe7
+    100050: pPipe8
+    100052: pPipe9
+    100054: transform59
+    100056: transform60
+    100058: transform61
+    100060: transform62
+    100062: transform63
+    100064: transform64
+    100066: transform65
+    100068: transform66
+    100070: transform67
+    100072: transform68
+    100074: transform69
+    100076: transform70
+    100078: transform71
+    100080: transform72
+    100082: transform73
+    100084: transform74
+    100086: transform75
     400000: //RootNode
     400002: polySurface4
     400004: polySurface42
@@ -25,9 +59,46 @@ ModelImporter:
     400014: transform7
     400016: transform8
     400018: transform9
+    400020: pCube31
+    400022: pCube32
+    400024: pCube33
+    400026: pCube34
+    400028: pCube35
+    400030: pCube36
+    400032: polySurface60
+    400034: polySurface61
+    400036: pPipe10
+    400038: pPipe11
+    400040: pPipe3
+    400042: pPipe4
+    400044: pPipe5
+    400046: pPipe6
+    400048: pPipe7
+    400050: pPipe8
+    400052: pPipe9
+    400054: transform59
+    400056: transform60
+    400058: transform61
+    400060: transform62
+    400062: transform63
+    400064: transform64
+    400066: transform65
+    400068: transform66
+    400070: transform67
+    400072: transform68
+    400074: transform69
+    400076: transform70
+    400078: transform71
+    400080: transform72
+    400082: transform73
+    400084: transform74
+    400086: transform75
     2300000: polySurface44
+    2300002: polySurface61
     3300000: polySurface44
+    3300002: polySurface61
     4300000: polySurface44
+    4300002: polySurface61
     9500000: //RootNode
   materials:
     importMaterials: 1
