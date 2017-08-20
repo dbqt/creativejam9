@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9632353, g: 0.8569473, b: 0.50994813, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -387,10 +387,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3dfce30f9ddda1478fd26557ca22932, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
@@ -437,7 +437,7 @@ MonoBehaviour:
   State: 0
   TotalRound: 3
   Round: 1
-  RoundDuration: 30
+  RoundDuration: 45
   confirmation1: 1
   confirmation2: 1
   Timer: {fileID: 660480321}
@@ -503,7 +503,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1890202852}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -993,8 +993,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: af09a39657e32394f967b38179c12268, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1109,7 +1109,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1890202852}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1154,7 +1154,7 @@ MonoBehaviour:
 
     3. Go back to your cart to stash your gold and score points.
 
-    4. Buy upgrades with your points at the end of the round
+    4. Spend your points at the end of the round to buy upgrades!
 
 
 
@@ -1375,8 +1375,8 @@ RectTransform:
   m_Children:
   - {fileID: 2009354643}
   - {fileID: 1504651132}
-  - {fileID: 680650703}
   - {fileID: 1428726976}
+  - {fileID: 680650703}
   - {fileID: 1910220344}
   m_Father: {fileID: 660480320}
   m_RootOrder: 2
@@ -1532,7 +1532,7 @@ GameObject:
   - component: {fileID: 1987888710}
   - component: {fileID: 1987888709}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Game Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JE VEUX GAGNER
+  m_Text: GOLD, GOLD, GOLD
 --- !u!222 &1987888710
 CanvasRenderer:
   m_ObjectHideFlags: 0
