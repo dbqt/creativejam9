@@ -181,13 +181,25 @@ public class Grid : MonoBehaviour {
                 return 0;
     }
 
+    GameObject[] obs;
     public void ShowMap() {
         MapAnimator.SetTrigger("ShowMap");
+        obs = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach(var o in obs) {
+            o.SetActive(false);
+        }
         GameLogic.Instance.StartTimer(this.TimeBeforeHidingMap);
+    }
+
+    public void ReshowObstacles(){
+        foreach(var o in obs) {
+            o.SetActive(true);
+        }
     }
 
     public void HideMap() {
         MapAnimator.SetTrigger("HideMap");
+        Invoke("ReshowObstacles", 0.5f);
         Invoke("StartRound", 1f);
     }
 
