@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 44ae029deae23d045b568f785e9ad45f
+timeCreated: 1503197265
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Vanilla Whale
+  fontNames:
+  - Vanilla Whale
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

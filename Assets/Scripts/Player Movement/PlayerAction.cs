@@ -8,6 +8,14 @@ public class PlayerAction : MonoBehaviour
     public Grid GridRef;
     private float timeDelay = 0.3f;
 
+    [Header("TNT")]
+    public GameObject TNTPrefab;
+    public float TNTDelay = 1f;
+
+    [Header("Animations")]
+    public Animator ToolAnimator;
+    public GameObject Pickaxe, Shovel;
+
     PlayerTools tools;
     PlayerGold gold;
 
@@ -24,7 +32,17 @@ public class PlayerAction : MonoBehaviour
         {
             if (this.gold.CanDig())
             {
-                Debug.Log(isPlayerOne);
+                // use animation depending on tool
+                if (this.tools.shovel != null) {
+                    this.Shovel.SetActive(true);
+                    this.Pickaxe.SetActive(false);
+                    this.ToolAnimator.SetTrigger("UseShovel");
+                } else {
+                    this.Shovel.SetActive(false);
+                    this.Pickaxe.SetActive(true);
+                    this.ToolAnimator.SetTrigger("UsePickaxe");
+                }
+
                 Invoke("Dig", timeDelay);
             }
         }
@@ -63,7 +81,7 @@ public class PlayerAction : MonoBehaviour
             } else {
                 goldObtained = cell.Dig(0);
             }
-//            GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
+            //GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
 
         } else {
             //using pickaxe
@@ -76,8 +94,8 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
-    /*    if (goldObtained > 0)
-        GetComponent<PlayerSoundManager>().playGoldSoundEffect(); */   
+        if (goldObtained > 0)
+            GetComponent<PlayerSoundManager>().playGoldSoundEffect();    
 
         this.gold.AddGoldToPocket(goldObtained);
     }
@@ -89,17 +107,23 @@ public class PlayerAction : MonoBehaviour
         }
 
         //putting tnt
-        //GetComponent<PlayerSoundManager>().playDiggingSoundEffect(false, 0.5f);
+        GetComponent<PlayerSoundManager>().playDiggingSoundEffect(false, 0.5f);
+        GameObject newTnt = Instantiate(TNTPrefab) as GameObject;
+        newTnt.GetComponent<TNTBehavior>().SetTNT(this.TNTDelay);
+
+        Invoke("AftermathTNT", this.TNTDelay);
         
+        this.tools.tnt = null;
+        
+    }
+
+    public void AftermathTNT() {
+        int goldObtained = this.GridRef.UseTNT( Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z), this.tools.tnt.radius);
         //exploding tnt
         //GetComponent<PlayerSoundManager>().playExplodingSoundEffect();
-
         //collecting gold
         //GetComponent<PlayerSoundManager>().playGoldSoundEffect();
-
-        int goldObtained = this.GridRef.UseTNT( (int)this.transform.position.x, (int)this.transform.position.z, this.tools.tnt.radius);
         this.gold.AddGoldToPocket(goldObtained);
-        this.tools.tnt = null;
     }
 
     public void GetStunned() {

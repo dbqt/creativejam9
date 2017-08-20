@@ -1,66 +1,41 @@
 fileFormatVersion: 2
-guid: 377f748abf4770e48b6d6dc03f3dc601
-timeCreated: 1503153982
+guid: d197383a93e4d04429548355b8e2f294
+timeCreated: 1503233260
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: curve2
-    100004: pCube29
-    100006: pCube30
-    100008: polySurface4
-    100010: polySurface57
-    100012: polySurface58
-    100014: polySurface58 1
-    100016: polySurface59
-    100018: pPipe1
-    100020: pPipe2
-    100022: transform48
-    100024: transform49
-    100026: transform50
-    100028: transform51
-    100030: transform52
-    100032: transform53
-    100034: transform54
-    100036: transform55
-    100038: transform56
-    100040: transform57
-    100042: transform58
-    100044: Trim_Char_x_1_2
-    100046: Trim_Char_x_1_3
-    100048: Trim_Text_x_1_1
+    100002: Foliage003
+    100004: Group1176
+    100006: pCube10
+    100008: pCube11
+    100010: pCube12
+    100012: pCube25
+    100014: pCube9
+    100016: transform28
+    100018: transform29
+    100020: transform30
+    100022: transform31
+    100024: transform32
+    100026: transform33
     400000: //RootNode
-    400002: curve2
-    400004: pCube29
-    400006: pCube30
-    400008: polySurface4
-    400010: polySurface57
-    400012: polySurface58
-    400014: polySurface58 1
-    400016: polySurface59
-    400018: pPipe1
-    400020: pPipe2
-    400022: transform48
-    400024: transform49
-    400026: transform50
-    400028: transform51
-    400030: transform52
-    400032: transform53
-    400034: transform54
-    400036: transform55
-    400038: transform56
-    400040: transform57
-    400042: transform58
-    400044: Trim_Char_x_1_2
-    400046: Trim_Char_x_1_3
-    400048: Trim_Text_x_1_1
-    2300000: //RootNode
-    2300002: curve2
-    3300000: //RootNode
-    3300002: curve2
-    4300000: polySurface4
-    4300002: curve2
+    400002: Foliage003
+    400004: Group1176
+    400006: pCube10
+    400008: pCube11
+    400010: pCube12
+    400012: pCube25
+    400014: pCube9
+    400016: transform28
+    400018: transform29
+    400020: transform30
+    400022: transform31
+    400024: transform32
+    400026: transform33
+    2300000: pCube25
+    3300000: pCube25
+    4300000: pCube25
     9500000: //RootNode
   materials:
     importMaterials: 1

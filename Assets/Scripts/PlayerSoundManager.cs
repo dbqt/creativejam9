@@ -28,9 +28,9 @@ public class PlayerSoundManager : MonoBehaviour
             if (elapsedDiggingTime % 30 == 0)
             {
                 if (isDirt)
-                    GetComponent<AudioSource>().PlayOneShot(dirtDigging[Random.Range(0, 3)]);
+                    GetComponent<AudioSource>().PlayOneShot(dirtDigging[Random.Range(0, dirtDigging.Length)]);
                 else
-                    GetComponent<AudioSource>().PlayOneShot(stoneDigging[Random.Range(0, 3)]);
+                    GetComponent<AudioSource>().PlayOneShot(stoneDigging[Random.Range(0, stoneDigging.Length)]);
             }
         }
     }
@@ -45,7 +45,7 @@ public class PlayerSoundManager : MonoBehaviour
 
     public void playHitSoundEffect()
     {
-        GetComponent<AudioSource>().PlayOneShot(hit[Random.Range(0,2)]);
+        GetComponent<AudioSource>().PlayOneShot(hit[Random.Range(0,hit.Length)]);
     }
 
     public void playGoldSoundEffect(){
@@ -54,6 +54,6 @@ public class PlayerSoundManager : MonoBehaviour
 
     public void playExplodingSoundEffect()
     {
-        GetComponent<AudioSource>().PlayOneShot(explode[Random.Range(0, 2)]);
+        GetComponent<AudioSource>().PlayOneShot(explode[Random.Range(0, explode.Length)]);
     }
 }
