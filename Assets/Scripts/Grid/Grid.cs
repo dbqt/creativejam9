@@ -37,8 +37,13 @@ public class Grid : MonoBehaviour {
     private HashSet<Coordinates> mapMarks;
     private List<Coordinates> obstacles;
 
+    [Header("End Screen")]
+    public GameObject EndScreenCanvas;
+
 	// Use this for initialization
 	void Start () {
+        EndScreenCanvas.SetActive(false);
+
 		this.internalGrid = new GridCell[SizeX, SizeY];
         this.mapMarks = new HashSet<Coordinates>();
         this.obstacles = new List<Coordinates>();
@@ -194,10 +199,19 @@ public class Grid : MonoBehaviour {
     }
 
     public void EndRound() {
+        if(GameLogic.Instance.Round >= GameLogic.Instance.TotalRound){
+        
+            ShowEndScreen();
+        }
         this.roundStarted = false;
         Player1.GetComponent<PlayerGold>().SaveData();
         Player2.GetComponent<PlayerGold>().SaveData();
         GameLogic.Instance.EndRound();
+    }
+
+    public void ShowEndScreen()
+    {
+        EndScreenCanvas.SetActive(true);
     }
 
     private class Coordinates {

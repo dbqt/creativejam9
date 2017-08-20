@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &9775674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5856eabb195755438785fa9b6ca4f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1_Score: {fileID: 620026359}
-  Player2_Score: {fileID: 1495661435}
+  Player1_Score: {fileID: 1699103158}
+  Player2_Score: {fileID: 1655741806}
 --- !u!1 &61215632
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &516209167
 GameObject:
@@ -1357,7 +1357,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1495661433
 GameObject:
@@ -1929,6 +1929,7 @@ MonoBehaviour:
   MapTexture: {fileID: 380745370}
   MapAnimator: {fileID: 1721456494}
   TimeBeforeHidingMap: 5
+  EndScreenCanvas: {fileID: 9775673}
 --- !u!4 &1839107866
 Transform:
   m_ObjectHideFlags: 0
