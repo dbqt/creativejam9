@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 14e1e7beb5de7a04b849cef5ab4ed255
+timeCreated: 1503233969
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Rio Grande
+  fontNames:
+  - Rio Grande
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
