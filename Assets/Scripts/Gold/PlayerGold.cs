@@ -60,6 +60,10 @@ public class PlayerGold : MonoBehaviour {
             tools.bag = PlayerPrefs.GetInt("Bag2") == 1 ? new Bag() : null;
             tools.tnt = PlayerPrefs.GetInt("Tnt2") == 1 ? new TNT() : null;
         }
+
+        if(tools.bag != null) {
+            InventorySize = 10;
+        }
     }
 
     // Deposit then save data to persist.
