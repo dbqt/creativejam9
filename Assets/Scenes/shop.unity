@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeCursor_Player1: {fileID: 282776372}
-  mainShop: {fileID: 0}
+  mainShop: {fileID: 1918497585}
 --- !u!1 &295657568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,7 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d5024dcdd41364c95acde4063721ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainShop: {fileID: 0}
+  mainShop: {fileID: 1918497585}
   storeCursor_Player2: {fileID: 2060735559}
 --- !u!1 &2146637898
 GameObject:
