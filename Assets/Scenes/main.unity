@@ -869,6 +869,12 @@ Prefab:
       propertyPath: Pickaxe
       value: 
       objectReference: {fileID: 316842671}
+    - target: {fileID: 114583381799038028, guid: 02249a4106019794998680611648df68,
+        type: 2}
+      propertyPath: TNTPrefab
+      value: 
+      objectReference: {fileID: 1339213550178696, guid: 5a864dbd6609b10439879beea38d26d4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02249a4106019794998680611648df68, type: 2}
   m_IsPrefabParent: 0
@@ -1858,6 +1864,12 @@ Prefab:
       propertyPath: Pickaxe
       value: 
       objectReference: {fileID: 1163235280}
+    - target: {fileID: 114855019691537416, guid: 8ceaf17718dd0194a88110ce6be5d3db,
+        type: 2}
+      propertyPath: TNTPrefab
+      value: 
+      objectReference: {fileID: 1339213550178696, guid: 5a864dbd6609b10439879beea38d26d4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ceaf17718dd0194a88110ce6be5d3db, type: 2}
   m_IsPrefabParent: 0
