@@ -21,7 +21,7 @@ public class EnvironmentSoundManager : MonoBehaviour
     void PlayMenuSoundtrack()
     {
         GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().PlayOneShot(MenuSoundtrack);
+        GetComponent<AudioSource>().PlayOneShot(menuShopSoundtrack);
     }
 
     void PlayGameSoundtrack()
