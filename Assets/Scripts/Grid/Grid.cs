@@ -159,8 +159,17 @@ public class Grid : MonoBehaviour {
         return this.internalGrid[x, y];
     }
 
-    public int UseTNT(int x, int y, int radius = 3) {
-        return 0;
+    public int UseTNT(int x, int y, int radius = 1)
+    {
+        for (int xi = x - 1; xi <= x + 1; xi++)
+            for (int yi = y - 1; yi <= y + 1; yi++)
+                try
+                {
+                        Grid[xi][yi].Dig(10);
+                }
+                catch (Exception e) { };
+
+                return 0;
     }
 
     public void ShowMap() {
