@@ -583,7 +583,7 @@ RectTransform:
   m_GameObject: {fileID: 341769719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000056, y: 1.0000056, z: 1.0000056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728177724}
   m_RootOrder: 4
@@ -1056,7 +1056,7 @@ RectTransform:
   m_GameObject: {fileID: 645098328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000056, y: 1.0000056, z: 1.0000056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728177724}
   m_RootOrder: 1
@@ -1574,7 +1574,7 @@ RectTransform:
   m_GameObject: {fileID: 922481216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000056, y: 1.0000056, z: 1.0000056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728177724}
   m_RootOrder: 2
@@ -2751,7 +2751,7 @@ RectTransform:
   m_GameObject: {fileID: 1754322700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000056, y: 1.0000056, z: 1.0000056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728177724}
   m_RootOrder: 3
@@ -2839,12 +2839,22 @@ MonoBehaviour:
   - Name: {fileID: 1338068754}
     Price: {fileID: 1669917029}
   items: []
-  P1Score: {fileID: 0}
-  P1Gold: {fileID: 0}
-  P1Items: []
-  P2Score: {fileID: 0}
-  P2Gold: {fileID: 0}
-  P2Items: []
+  P1Score: {fileID: 1345543215}
+  P1Gold: {fileID: 1368231237}
+  P1Items:
+  - {fileID: 1532612347}
+  - {fileID: 626491422}
+  - {fileID: 918737981}
+  - {fileID: 2146637900}
+  - {fileID: 1122468583}
+  P2Score: {fileID: 1373026473}
+  P2Gold: {fileID: 814046854}
+  P2Items:
+  - {fileID: 1159826214}
+  - {fileID: 645098330}
+  - {fileID: 922481218}
+  - {fileID: 1754322702}
+  - {fileID: 341769721}
   showPickAxe: 0
   showShield: 0
   showShovel: 0

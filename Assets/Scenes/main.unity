@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &9775674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5856eabb195755438785fa9b6ca4f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1_Score: {fileID: 620026359}
-  Player2_Score: {fileID: 1495661435}
+  Player1_Score: {fileID: 1699103158}
+  Player2_Score: {fileID: 1655741806}
 --- !u!1 &61215632
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +767,11 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
+<<<<<<< HEAD
+  m_Constraints: 126
+=======
   m_Constraints: 116
+>>>>>>> e820f40b2bab64dc4e13f7733eda7f7dcc9232ae
   m_CollisionDetection: 0
 --- !u!65 &385351996
 BoxCollider:
@@ -2180,6 +2184,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!54 &1472137217
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472137208}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+=======
+>>>>>>> e820f40b2bab64dc4e13f7733eda7f7dcc9232ae
 --- !u!1 &1495661433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2847,7 @@ MonoBehaviour:
   MapTexture: {fileID: 380745370}
   MapAnimator: {fileID: 1721456494}
   TimeBeforeHidingMap: 5
+  EndScreenCanvas: {fileID: 9775673}
 --- !u!4 &1839107866
 Transform:
   m_ObjectHideFlags: 0
