@@ -7,13 +7,26 @@ public class PlayerMovement : MonoBehaviour {
     public Transform player;
     public float translationSpeed = 1.0f;
 
+    private float stunDuration = 0;
+
     void FixedUpdate()
     {
 
         float verticalValue = Input.GetAxis("Vertical_Player1");
         float horizontalValue = Input.GetAxis("Horizontal_Player1");
         Vector3 target = new Vector3(horizontalValue, 0, verticalValue);
+
+        if (stunDuration > 0)
+        {
+            target *= -1;
+            stunDuration-=Time.deltaTime;
+        }
+
         player.Translate(target * translationSpeed, Space.World);
+    }
+
+    void stun(float duration){
+        stunDuration = duration;
     }
 }
 
