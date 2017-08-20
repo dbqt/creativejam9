@@ -13,8 +13,9 @@ public class TNTBehavior : MonoBehaviour {
 
     void Explode() {
         //play explosion animation
-        Anim.SetTrigger("Explode");
+        
         TNTModel.SetActive(false);
+        Anim.SetTrigger("Explode");
         Destroy(this.gameObject, 0.5f);
     }
 }

@@ -9,7 +9,7 @@ public class P2StoreSelect : MonoBehaviour
     public Shop mainShop;
 
     public Text storeCursor_Player2;
-    private const float positionX = 573.0399f;
+    private const float positionX = 644f;
     private const float positionZ = 0.0f;
 
     private float[] leTableauDeDieu = new float[5] { 38.68f, -76.0f, -164.0f, -284.0f, -381.0f };

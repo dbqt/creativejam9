@@ -10,7 +10,7 @@ public class P1StoreSelect : MonoBehaviour {
 
     public Shop mainShop; 
 
-    private const float positionX = -573.04f;
+    private const float positionX = -644f;
     private const float positionZ = 0f;
 
     private float[] leTableauDeDieu = new float[5] { 38.68f, -76.0f, -164.0f, -284.0f, -381.0f };
@@ -20,7 +20,7 @@ public class P1StoreSelect : MonoBehaviour {
        // Update is called once per frame
     void Start()
     {
-        storeCursor_Player1.rectTransform.anchoredPosition3D = new Vector3(-573.04f, leTableauDeDieu[index], 0.0f);
+        storeCursor_Player1.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], 0.0f);
     }
    
 	void Update () {
