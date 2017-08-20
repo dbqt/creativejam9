@@ -24,6 +24,7 @@ public class PlayerAction : MonoBehaviour
         {
             if (this.gold.CanDig())
             {
+                Debug.Log(isPlayerOne);
                 Invoke("Dig", timeDelay);
             }
         }
@@ -51,6 +52,7 @@ public class PlayerAction : MonoBehaviour
     }
 
     public void Dig() {
+
         GridCell cell = this.GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
 
         int goldObtained = 0;

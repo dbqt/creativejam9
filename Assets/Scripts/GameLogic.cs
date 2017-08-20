@@ -58,11 +58,13 @@ public class GameLogic : MonoBehaviour {
             case GameState.Intro:
             //Debug.Log("case intro");
 
-            if(Input.GetButton("Start_Player1")) {
+            if(Input.GetButtonDown("Start_Player1")) {
+                Debug.Log("Start Player ONE");
                 this.confirmation1 = true;
             }
 
-            if(Input.GetButton("Start_Player2")) {
+            if(Input.GetButtonDown("Start_Player2")) {
+                Debug.Log("Start Player TWO");
                 this.confirmation2 = true;
             }
 
