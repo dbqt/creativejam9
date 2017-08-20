@@ -76,7 +76,7 @@ public class PlayerAction : MonoBehaviour
             } else {
                 goldObtained = cell.Dig(0);
             }
-//            GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
+            GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
 
         } else {
             //using pickaxe
@@ -89,8 +89,8 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
-    /*    if (goldObtained > 0)
-        GetComponent<PlayerSoundManager>().playGoldSoundEffect(); */   
+        if (goldObtained > 0)
+            GetComponent<PlayerSoundManager>().playGoldSoundEffect();    
 
         this.gold.AddGoldToPocket(goldObtained);
     }

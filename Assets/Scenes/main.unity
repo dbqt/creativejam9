@@ -609,6 +609,33 @@ GameObject:
   m_PrefabParentObject: {fileID: 1154642311731484, guid: 02249a4106019794998680611648df68,
     type: 2}
   m_PrefabInternal: {fileID: 1099879830}
+--- !u!114 &385351990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385351989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea8a941a2eb3f549952a1abbe633691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirtDigging:
+  - {fileID: 8300000, guid: f331375912e1d8c41941a7947a484ada, type: 3}
+  - {fileID: 8300000, guid: 7943a4bd7c8038d48be474fc772dadd2, type: 3}
+  - {fileID: 8300000, guid: 807faf1875cb8064bb404716e9331141, type: 3}
+  - {fileID: 8300000, guid: 82d1d0712765aa64fa130c0fed546df6, type: 3}
+  stoneDigging:
+  - {fileID: 8300000, guid: 2543cbd46eceae6459b38230cc18205f, type: 3}
+  - {fileID: 8300000, guid: f1fae61ecc2419e4d8218630b749c937, type: 3}
+  - {fileID: 8300000, guid: c6c39e7200ae0da47995e0261eb21bad, type: 3}
+  - {fileID: 8300000, guid: d6f62b36bb01c3d4c9c56283974e03f6, type: 3}
+  hit:
+  - {fileID: 8300000, guid: 2f86fce1a5fc81f44a03093a4d372d48, type: 3}
+  - {fileID: 8300000, guid: 05ede0fb332746d4bbc475ffa41ffd54, type: 3}
+  - {fileID: 8300000, guid: 0d26f2246e2efd94c8c7e33aac155f3c, type: 3}
+  explode: []
+  money: {fileID: 8300000, guid: e60370aeba7352645855ec44f7450ffb, type: 3}
 --- !u!1 &516209167
 GameObject:
   m_ObjectHideFlags: 0
