@@ -25,7 +25,9 @@ public class P1StoreSelect : MonoBehaviour {
    
 	void Update () {
 
-        
+        if (Input.GetButtonDown("Dig1")) {
+            Select();
+        }
 
         if (!allowAction)
             return;
