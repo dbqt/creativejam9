@@ -35,9 +35,9 @@ public class InGameScore : MonoBehaviour {
         P2Score.text = "Score: " + GameGrid.Player2.GetComponent<PlayerGold>().TotalGold;
         P2Gold.text = "Gold: " + GameGrid.Player2.GetComponent<PlayerGold>().UsableGold;
         if(GameGrid.Player2.GetComponent<PlayerGold>().PocketedGold < GameGrid.Player2.GetComponent<PlayerGold>().InventorySize) {
-            P1Pocket.text = "Pocket: " + GameGrid.Player2.GetComponent<PlayerGold>().PocketedGold + "/" + GameGrid.Player2.GetComponent<PlayerGold>().InventorySize;
+            P2Pocket.text = "Pocket: " + GameGrid.Player2.GetComponent<PlayerGold>().PocketedGold + "/" + GameGrid.Player2.GetComponent<PlayerGold>().InventorySize;
         } else {
-            P1Pocket.text = "Pocket filled!";
+            P2Pocket.text = "Pocket filled!";
         }
 	}
 }
