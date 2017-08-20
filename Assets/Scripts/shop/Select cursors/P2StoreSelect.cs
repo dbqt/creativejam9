@@ -25,6 +25,10 @@ public class P2StoreSelect : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetButtonDown("Dig2")) {
+            Select();
+        }
+
         if (!allowAction)
             return;
 
