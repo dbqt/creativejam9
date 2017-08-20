@@ -26,6 +26,8 @@ public class GameLogic : MonoBehaviour {
     public countdownTimer Timer;
     public Text TimerText;
 
+    public GameObject IntroCanvas, EndRoundCanvas;
+
     private bool showTimer;
 
 	// Use this for initialization
@@ -68,9 +70,8 @@ public class GameLogic : MonoBehaviour {
                 this.confirmation2 = true;
             }
 
-
-
             if(this.confirmation1 && this.confirmation2) {
+                HideIntroCanvas();
                 StartRound();
             }
 
@@ -125,6 +126,15 @@ public class GameLogic : MonoBehaviour {
         this.State = GameState.Intro;
         this.confirmation1 = false;
         this.confirmation2 = false;
+        ShowIntroCanvas();
+    }
+
+    void ShowIntroCanvas() {
+        this.IntroCanvas.SetActive(true);
+    }
+
+    void HideIntroCanvas() {
+        this.IntroCanvas.SetActive(false);
     }
 
     public void StartRound() {
@@ -141,15 +151,24 @@ public class GameLogic : MonoBehaviour {
         // show results
         this.State = GameState.EndRound;
         if(this.Round < this.TotalRound) {
+            ShowEndRoundCanvas();
             Invoke("ShowShop", 1f);
         } else {
             EndGame();
         }
     }
 
+    void ShowEndRoundCanvas() {
+        this.EndRoundCanvas.SetActive(true);
+    }
+
+    void HideEndRoundCanvas() {
+        this.EndRoundCanvas.SetActive(false);
+    }
+
     public void ShowShop() {
         // show shop
-
+        HideEndRoundCanvas();
         this.State = GameState.Shop;
         SceneManager.LoadScene("shop");
 
