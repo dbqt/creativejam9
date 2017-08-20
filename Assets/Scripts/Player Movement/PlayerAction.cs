@@ -18,15 +18,18 @@ public class PlayerAction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (Input.GetButtonDown("Dig"))
+                Debug.Log("Hello World");
+
         //input for digging {
-            // if(this.gold.CanDig()) {
-                // Dig();
-            // }
+        // if(this.gold.CanDig()) {
+        // Dig();
+        // }
         // }
 
 
-		
-	}
+
+    }
 
     public void TakeDamage() {
         if (this.tools.shield != null) {
