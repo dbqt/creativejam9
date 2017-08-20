@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -374,8 +374,8 @@ MonoBehaviour:
   confirmation2: 1
   Timer: {fileID: 660480321}
   TimerText: {fileID: 995036456}
-  IntroCanvas: {fileID: 0}
-  EndRoundCanvas: {fileID: 0}
+  IntroCanvas: {fileID: 1890202851}
+  EndRoundCanvas: {fileID: 206388913}
 --- !u!4 &660480320
 Transform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 98.83}
-  m_SizeDelta: {x: 800, y: 600}
+  m_SizeDelta: {x: 800, y: 102.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987888709
 MonoBehaviour:
