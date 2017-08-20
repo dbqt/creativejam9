@@ -49,6 +49,8 @@ public class Shop : MonoBehaviour
 
             i++;
         }
+
+        UpdateUI();
     }
 
     void showTools(GameObject player)
@@ -165,6 +167,8 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("Bag2", bag);
             PlayerPrefs.SetInt("Tnt2", tnt);
         }
+
+        UpdateUI();
 
         return result;
     }
