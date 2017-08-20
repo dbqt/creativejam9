@@ -83,6 +83,10 @@ public class P1StoreSelect : MonoBehaviour {
     void Select() {
         var item = mainShop.items.ElementAt(index);
         
-        mainShop.buyItem(item.name, true);
+        if( mainShop.buyItem(item.name, true) ) {
+            // TODO: positive feedback
+        } else {
+            // TODO: negative feedback
+        }
     }
 }

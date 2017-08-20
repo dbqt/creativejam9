@@ -83,6 +83,10 @@ public class P2StoreSelect : MonoBehaviour
     void Select() {
         var item = mainShop.items.ElementAt(index);
         
-        mainShop.buyItem(item.name, false);
+        if( mainShop.buyItem(item.name, false) ) {
+            // TODO: positive feedback
+        } else {
+            // TODO: negative feedback
+        }
     }
 }
