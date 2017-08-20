@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748169, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657856, g: 0.4964127, b: 0.5748166, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2834,14 +2834,15 @@ MonoBehaviour:
   SizeX: 20
   SizeY: 12
   TotalGold: 50
-  NbRocks: 10
-  NbCactus: 10
+  NbRocks: 20
+  NbCactus: 14
   Map: {fileID: 1721456493}
   RedXPrefab: {fileID: 1310220974815796, guid: 5c1829d82449fb144a3b7105dc7cce7f, type: 2}
   MapTexture: {fileID: 380745370}
   MapAnimator: {fileID: 1721456494}
   TimeBeforeHidingMap: 5
   EndScreenCanvas: {fileID: 9775673}
+  Canvas3rdRound: {fileID: 1347111571}
 --- !u!4 &1839107866
 Transform:
   m_ObjectHideFlags: 0

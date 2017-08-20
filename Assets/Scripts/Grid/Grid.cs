@@ -39,6 +39,7 @@ public class Grid : MonoBehaviour {
 
     [Header("End Screen")]
     public GameObject EndScreenCanvas;
+    public GameObject Canvas3rdRound;
 
 	// Use this for initialization
 	void Start () {
@@ -212,6 +213,7 @@ public class Grid : MonoBehaviour {
     public void ShowEndScreen()
     {
         EndScreenCanvas.SetActive(true);
+        Canvas3rdRound.SetActive(false);
     }
 
     private class Coordinates {
