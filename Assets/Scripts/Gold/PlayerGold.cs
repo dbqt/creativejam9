@@ -64,6 +64,15 @@ public class PlayerGold : MonoBehaviour {
         if(tools.bag != null) {
             InventorySize = 10;
         }
+        
+
+        if(tools.tnt != null) {
+            //show tnt can be used
+        }
+
+        if(tools.shield != null) {
+            // display shield
+        }
     }
 
     // Deposit then save data to persist.
