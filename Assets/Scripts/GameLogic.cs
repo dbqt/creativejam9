@@ -120,6 +120,7 @@ public class GameLogic : MonoBehaviour {
 	
 	public void LoadIntro() {
         // show rules , character selection
+        ResetData();
         this.Round = 1;
         this.State = GameState.Intro;
         this.confirmation1 = false;
@@ -183,5 +184,25 @@ public class GameLogic : MonoBehaviour {
     public void HideTimer() {
         this.showTimer = false;
         this.TimerText.text = "";
+    }
+
+    void ResetData() {
+
+        PlayerPrefs.SetInt("TotalGold1", 0 );
+        PlayerPrefs.SetInt("UsableGold1", 0);
+        PlayerPrefs.SetInt("Shield1", 0);
+        PlayerPrefs.SetInt("Pickaxe1", 0);
+        PlayerPrefs.SetInt("Shovel1", 0);
+        PlayerPrefs.SetInt("Bag1", 0);
+        PlayerPrefs.SetInt("Tnt1", 0);
+    
+        PlayerPrefs.SetInt("TotalGold2", 0 );
+        PlayerPrefs.SetInt("UsableGold2", 0);
+        PlayerPrefs.SetInt("Shield2", 0);
+        PlayerPrefs.SetInt("Pickaxe2", 0);
+        PlayerPrefs.SetInt("Shovel2", 0);
+        PlayerPrefs.SetInt("Bag2", 0);
+        PlayerPrefs.SetInt("Tnt2", 0);
+        
     }
 }
