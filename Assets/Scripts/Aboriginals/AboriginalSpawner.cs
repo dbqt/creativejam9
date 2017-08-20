@@ -25,6 +25,8 @@ public class AboriginalSpawner: MonoBehaviour
 
     private IEnumerator StartSpawning()
     {
+        yield return new WaitForSecondsRealtime(6);
+
         while (true)
         {
             // Delay between spawns
