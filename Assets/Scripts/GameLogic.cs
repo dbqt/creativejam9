@@ -49,7 +49,7 @@ public class GameLogic : MonoBehaviour {
             this.TimerText.text = this.Timer.timerText;
         }
 
-        // State Machine whlie waiting
+        // State Machine while waiting
         switch (this.State) {
             case GameState.Menu:
             //Debug.Log("case menu");
@@ -58,15 +58,15 @@ public class GameLogic : MonoBehaviour {
             case GameState.Intro:
             //Debug.Log("case intro");
 
-            /* if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player1")) {
                 this.confirmation1 = true;
             }
 
-            if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player2")) {
                 this.confirmation2 = true;
             }
 
-            */
+
 
             if(this.confirmation1 && this.confirmation2) {
                 StartRound();
@@ -82,30 +82,30 @@ public class GameLogic : MonoBehaviour {
             break;
             case GameState.Shop:
             //Debug.Log("case shop");
-            /* if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player1")) {
                 this.confirmation1 = true;
             }
 
-            if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player2")) {
                 this.confirmation2 = true;
             }
 
-            */
+           
 
             if(this.confirmation1 && this.confirmation2) {
                 CloseShop();
             }
             break;
             case GameState.EndGame:
-            /* if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player1")) {
                 this.confirmation1 = true;
             }
 
-            if(Input.GetButton("????")) {
+            if(Input.GetButton("Start_Player2")) {
                 this.confirmation2 = true;
             }
 
-            */
+           
 
             if(this.confirmation1 && this.confirmation2) {
                 LoadMenu();
