@@ -27,7 +27,7 @@ public class Shop : MonoBehaviour
     public void readTextFile()
     {
         items = new List<ItemTag>();
-        string path = Application.dataPath + "/Scripts/shop/ItemsPrice.txt";
+        string path = Application.dataPath + "/ItemsPrice.txt";
         StreamReader reader = new StreamReader(path);
 
         while(!reader.EndOfStream)

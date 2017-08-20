@@ -86,7 +86,10 @@ public class PlayerAction : MonoBehaviour
 
     public void Dig()
     {
-        if (GetComponent<PlayerMovement>().IsStunned()) return;
+        if (isPlayerOne)
+        { if (GetComponent<PlayerMovement>().IsStunned()) return; }
+        else
+        if (GetComponent<PlayerMovement2>().IsStunned()) return;
 
         GridCell cell = GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
 
