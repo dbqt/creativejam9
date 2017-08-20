@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657856, g: 0.4964127, b: 0.5748166, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -119,13 +119,14 @@ GameObject:
   - component: {fileID: 9775676}
   - component: {fileID: 9775675}
   - component: {fileID: 9775674}
+  - component: {fileID: 9775678}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Final Score Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &9775674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +210,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &9775678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 9775673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5856eabb195755438785fa9b6ca4f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1_Score: {fileID: 620026359}
+  Player2_Score: {fileID: 1495661435}
 --- !u!1 &61215632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1493,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1655741804
 GameObject:
@@ -1957,10 +1971,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinimalDelaySpawns: 1
   MaximalDelaySpawns: 2
-  minimumXSide: -1
-  maximumXSide: 21
-  minimumZSide: -1
-  maximumZSide: 13
+  minimumXSide: 0
+  maximumXSide: 0
+  minimumZSide: 0
+  maximumZSide: 0
   Aboriginal: {fileID: 1101227541113954, guid: 4463a35bcc08fb340bc8959fdb9c4150, type: 2}
 --- !u!4 &1928318691
 Transform:
@@ -1973,7 +1987,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068408350
 GameObject:

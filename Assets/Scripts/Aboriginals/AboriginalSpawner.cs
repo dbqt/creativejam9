@@ -8,15 +8,19 @@ public class AboriginalSpawner: MonoBehaviour
     public float MaximalDelaySpawns = 2.0f;
 
     // Choosing the maximum and minimum range of the sides for the cannon to appear.
-    public float minimumXSide = -Random.Range(0.0f, 1.0f);
-    public float maximumXSide = Random.Range(0.0f, 21.0f);
-    public float minimumZSide = -Random.Range(0.0f, 1.0f);
-    public float maximumZSide = Random.Range(0.0f, 13.0f);
+    public float minimumXSide = 0.0f;
+    public float maximumXSide = 0.0f;
+    public float minimumZSide = 0.0f;
+    public float maximumZSide = 0.0f;
     public Object Aboriginal;
 
     // Use this for initialization
 	void Start () {
 	    StartCoroutine(StartSpawning());
+        minimumXSide = -Random.Range(0.0f, 1.0f);
+        maximumXSide = Random.Range(0.0f, 21.0f);
+        minimumZSide = -Random.Range(0.0f, 1.0f);
+        maximumZSide = Random.Range(0.0f, 13.0f);
     }
 
     private IEnumerator StartSpawning()
