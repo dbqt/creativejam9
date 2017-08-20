@@ -215,7 +215,7 @@ public class GameLogic : MonoBehaviour {
         PlayerPrefs.SetInt("UsableGold1", 0);
         PlayerPrefs.SetInt("Shield1", 0);
         PlayerPrefs.SetInt("Pickaxe1", 0);
-        PlayerPrefs.SetInt("Shovel1", 0);
+        PlayerPrefs.SetInt("Shovel1", 1);
         PlayerPrefs.SetInt("Bag1", 0);
         PlayerPrefs.SetInt("Tnt1", 0);
     
@@ -223,7 +223,7 @@ public class GameLogic : MonoBehaviour {
         PlayerPrefs.SetInt("UsableGold2", 0);
         PlayerPrefs.SetInt("Shield2", 0);
         PlayerPrefs.SetInt("Pickaxe2", 0);
-        PlayerPrefs.SetInt("Shovel2", 0);
+        PlayerPrefs.SetInt("Shovel2", 1);
         PlayerPrefs.SetInt("Bag2", 0);
         PlayerPrefs.SetInt("Tnt2", 0);
         

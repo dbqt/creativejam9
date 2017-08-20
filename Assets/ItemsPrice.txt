@@ -1,0 +1,5 @@
+{"name":"Shield","price":1}
+{"name":"TNT","price":1}
+{"name":"Pickaxe","price":1}
+{"name":"Shovel","price":1}
+{"name":"Bag","price":10}
