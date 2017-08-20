@@ -8,6 +8,9 @@ public class PlayerAction : MonoBehaviour
     public Grid GridRef;
     private float timeDelay = 0.3f;
 
+    public Animator ToolAnimator;
+    public GameObject Pickaxe, Shovel;
+
     PlayerTools tools;
     PlayerGold gold;
 
@@ -24,7 +27,17 @@ public class PlayerAction : MonoBehaviour
         {
             if (this.gold.CanDig())
             {
-                Debug.Log(isPlayerOne);
+                // use animation depending on tool
+                if (this.tools.shovel != null) {
+                    this.Shovel.SetActive(true);
+                    this.Pickaxe.SetActive(false);
+                    this.ToolAnimator.SetTrigger("UseShovel");
+                } else {
+                    this.Shovel.SetActive(false);
+                    this.Pickaxe.SetActive(true);
+                    this.ToolAnimator.SetTrigger("UsePickaxe");
+                }
+
                 Invoke("Dig", timeDelay);
             }
         }
