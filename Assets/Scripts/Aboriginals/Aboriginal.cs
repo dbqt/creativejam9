@@ -7,6 +7,7 @@ public class Aboriginal : MonoBehaviour
     public float arrowSpeed = 5.0f;
     public float destroyDelay = 1.0f;
     public float shotDelay = 1.5f;
+    public AudioClip bow;
 
     GameObject shot;
 
@@ -20,5 +21,6 @@ public class Aboriginal : MonoBehaviour
         shot = (GameObject)Instantiate(arrow, transform.position + transform.right, transform.rotation);
         shot.GetComponent<Rigidbody>().velocity = transform.right.normalized * arrowSpeed;
         Destroy(this.gameObject, destroyDelay);
+        GetComponent<AudioSource>().PlayOneShot(bow);
     }
 }

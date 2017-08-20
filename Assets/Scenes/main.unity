@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2323,10 +2323,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 807faf1875cb8064bb404716e9331141, type: 3}
   - {fileID: 8300000, guid: 7943a4bd7c8038d48be474fc772dadd2, type: 3}
   - {fileID: 8300000, guid: 82d1d0712765aa64fa130c0fed546df6, type: 3}
-  stoneDigging: []
-  hit: []
+  stoneDigging:
+  - {fileID: 8300000, guid: 2543cbd46eceae6459b38230cc18205f, type: 3}
+  - {fileID: 8300000, guid: f1fae61ecc2419e4d8218630b749c937, type: 3}
+  - {fileID: 8300000, guid: c6c39e7200ae0da47995e0261eb21bad, type: 3}
+  - {fileID: 8300000, guid: d6f62b36bb01c3d4c9c56283974e03f6, type: 3}
+  hit:
+  - {fileID: 8300000, guid: 2f86fce1a5fc81f44a03093a4d372d48, type: 3}
+  - {fileID: 8300000, guid: 05ede0fb332746d4bbc475ffa41ffd54, type: 3}
+  - {fileID: 8300000, guid: 0d26f2246e2efd94c8c7e33aac155f3c, type: 3}
   explode: []
-  money: {fileID: 0}
+  money: {fileID: 8300000, guid: e60370aeba7352645855ec44f7450ffb, type: 3}
 --- !u!54 &1472137212
 Rigidbody:
   m_ObjectHideFlags: 0
