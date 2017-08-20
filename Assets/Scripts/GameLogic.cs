@@ -27,6 +27,7 @@ public class GameLogic : MonoBehaviour {
     public Text TimerText;
 
     public GameObject IntroCanvas, EndRoundCanvas;
+    public GameObject CanvasDebutWololo;
 
     private bool showTimer;
 
@@ -130,6 +131,7 @@ public class GameLogic : MonoBehaviour {
     }
 
     void ShowIntroCanvas() {
+        this.CanvasDebutWololo.SetActive(false);
         this.IntroCanvas.SetActive(true);
     }
 
