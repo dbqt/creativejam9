@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -573.04, y: -381}
+  m_AnchoredPosition: {x: -573.04, y: 38.68}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282776372
@@ -1749,6 +1749,7 @@ GameObject:
   - component: {fileID: 2060735558}
   - component: {fileID: 2060735560}
   - component: {fileID: 2060735559}
+  - component: {fileID: 2060735561}
   m_Layer: 5
   m_Name: P2
   m_TagString: Untagged
@@ -1815,3 +1816,15 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060735557}
+--- !u!114 &2060735561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060735557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d5024dcdd41364c95acde4063721ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeCursor_Player2: {fileID: 2060735559}
