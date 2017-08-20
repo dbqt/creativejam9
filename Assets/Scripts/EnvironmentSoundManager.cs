@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnvironmentSoundManager : MonoBehaviour
 {
-    public AudioClip bow;
     public AudioClip menuShopSoundtrack, gameSoundtrack;
 
 	// Use this for initialization
@@ -18,20 +17,15 @@ public class EnvironmentSoundManager : MonoBehaviour
 		
 	}
 
-    void PlayMenuSoundtrack()
+    public void PlayMenuSoundtrack()
     {
         GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot(menuShopSoundtrack);
     }
 
-    void PlayGameSoundtrack()
+    public void PlayGameSoundtrack()
     {
         GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot(gameSoundtrack);
-    }
-
-    void PlayBowSoundEffect()
-    {
-        GetComponent<AudioSource>().PlayOneShot(bow);
     }
 }
