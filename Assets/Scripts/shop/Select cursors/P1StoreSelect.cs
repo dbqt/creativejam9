@@ -18,9 +18,14 @@ public class P1StoreSelect : MonoBehaviour {
     private bool allowAction = true;
     private int index = 0; // 0 -> premier element
        // Update is called once per frame
+
+    public Sprite[] images;
+    public Image presentImage;
+
     void Start()
     {
         storeCursor_Player1.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], 0.0f);
+        UpdateImage();
     }
    
 	void Update () {
@@ -63,7 +68,8 @@ public class P1StoreSelect : MonoBehaviour {
             storeCursor_Player1.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], positionZ);
         }
 
-        Debug.Log(index);       
+        Debug.Log(index); 
+        UpdateImage();      
     }
 
     void MoveCursorDown ()
@@ -72,6 +78,11 @@ public class P1StoreSelect : MonoBehaviour {
         index = index % 5;
         storeCursor_Player1.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], positionZ);
         Debug.Log(index);
+        UpdateImage();
+    }
+
+    void UpdateImage() {
+        presentImage.sprite = images[index]; 
     }
    
 

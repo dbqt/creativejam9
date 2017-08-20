@@ -16,10 +16,14 @@ public class P2StoreSelect : MonoBehaviour
     private float timeBuffer = 0.3f; //delay in seconds
     private bool allowAction = true;
     private int index = 0; // 0 -> premier element
+
+    public Sprite[] images;
+    public Image presentImage;
     // Update is called once per frame
     void Start()
     {
         storeCursor_Player2.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], positionZ);
+        UpdateImage();
     }
 
     void Update()
@@ -64,6 +68,7 @@ public class P2StoreSelect : MonoBehaviour
         }
 
         Debug.Log(index);
+        UpdateImage();
     }
 
     void MoveCursorDown()
@@ -72,8 +77,12 @@ public class P2StoreSelect : MonoBehaviour
         index = index % 5;
         storeCursor_Player2.rectTransform.anchoredPosition3D = new Vector3(positionX, leTableauDeDieu[index], positionZ);
         Debug.Log(index);
+        UpdateImage();
     }
 
+    void UpdateImage() {
+        presentImage.sprite = images[index]; 
+    }
 
     void UnblockCursor()
     {
