@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
             stunDuration-=Time.deltaTime;
         }
 
-        player.LookAt(target);
+        player.LookAt(this.transform.position + target);
         player.Translate(target * translationSpeed, Space.World);
     }
 

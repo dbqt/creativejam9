@@ -7,4 +7,9 @@ public class MenuButtonScript : MonoBehaviour {
 	public void PlayButton() {
         GameLogic.Instance.LoadIntro();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
