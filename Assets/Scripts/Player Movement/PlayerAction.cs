@@ -76,8 +76,8 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
-        if (goldObtained > 0)
-            GetComponent<PlayerSoundManager>().playGoldSoundEffect();
+    /*    if (goldObtained > 0)
+        GetComponent<PlayerSoundManager>().playGoldSoundEffect(); */   
 
         this.gold.AddGoldToPocket(goldObtained);
     }
