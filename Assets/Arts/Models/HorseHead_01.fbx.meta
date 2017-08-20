@@ -6,10 +6,101 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube7
+    100004: pCube8
+    100006: pCylinder1
+    100008: pCylinder2
+    100010: pCylinder3
+    100012: polySurface1
+    100014: polySurface1 1
+    100016: polySurface10
+    100018: polySurface11
+    100020: polySurface12
+    100022: polySurface13
+    100024: polySurface2
+    100026: polySurface3
+    100028: polySurface4
+    100030: polySurface4 1
+    100032: polySurface5
+    100034: polySurface6
+    100036: polySurface7
+    100038: polySurface7 1
+    100040: polySurface8
+    100042: polySurface9
+    100044: pSphere1
+    100046: pSphere2
+    100048: transform1
+    100050: transform10
+    100052: transform11
+    100054: transform12
+    100056: transform13
+    100058: transform14
+    100060: transform15
+    100062: transform16
+    100064: transform17
+    100066: transform18
+    100068: transform19
+    100070: transform2
+    100072: transform20
+    100074: transform21
+    100076: transform3
+    100078: transform4
+    100080: transform5
+    100082: transform6
+    100084: transform7
+    100086: transform8
+    100088: transform9
     400000: //RootNode
+    400002: pCube7
+    400004: pCube8
+    400006: pCylinder1
+    400008: pCylinder2
+    400010: pCylinder3
+    400012: polySurface1
+    400014: polySurface1 1
+    400016: polySurface10
+    400018: polySurface11
+    400020: polySurface12
+    400022: polySurface13
+    400024: polySurface2
+    400026: polySurface3
+    400028: polySurface4
+    400030: polySurface4 1
+    400032: polySurface5
+    400034: polySurface6
+    400036: polySurface7
+    400038: polySurface7 1
+    400040: polySurface8
+    400042: polySurface9
+    400044: pSphere1
+    400046: pSphere2
+    400048: transform1
+    400050: transform10
+    400052: transform11
+    400054: transform12
+    400056: transform13
+    400058: transform14
+    400060: transform15
+    400062: transform16
+    400064: transform17
+    400066: transform18
+    400068: transform19
+    400070: transform2
+    400072: transform20
+    400074: transform21
+    400076: transform3
+    400078: transform4
+    400080: transform5
+    400082: transform6
+    400084: transform7
+    400086: transform8
+    400088: transform9
     2300000: //RootNode
+    2300002: polySurface7
     3300000: //RootNode
+    3300002: polySurface7
     4300000: pCube7
+    4300002: polySurface7
     9500000: //RootNode
   materials:
     importMaterials: 1
