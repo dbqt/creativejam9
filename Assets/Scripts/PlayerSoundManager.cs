@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
 {
-    public AudioClip[] dirtDigging, stoneDigging, hit;
+    public AudioClip[] dirtDigging, stoneDigging, hit, explode;
     public AudioClip money;
 
     private bool isDirt = true;
@@ -15,7 +15,7 @@ public class PlayerSoundManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        playDiggingSoundEffect(true, 5);	
+
 	}
 	
 	// Update is called once per frame
@@ -35,7 +35,7 @@ public class PlayerSoundManager : MonoBehaviour
         }
     }
 
-    void playDiggingSoundEffect(bool IsDirt, float time)
+    public void playDiggingSoundEffect(bool IsDirt, float time)
     {
         isDirt = IsDirt;
         elapsedDiggingTime = 0;
@@ -43,12 +43,17 @@ public class PlayerSoundManager : MonoBehaviour
 
     }
 
-    void playHitSoundEffect()
+    public void playHitSoundEffect()
     {
         GetComponent<AudioSource>().PlayOneShot(hit[Random.Range(0,2)]);
     }
 
-    void playMoneySoundEffect(){
+    public void playGoldSoundEffect(){
         GetComponent<AudioSource>().PlayOneShot(money);
+    }
+
+    public void playExplodingSoundEffect()
+    {
+        GetComponent<AudioSource>().PlayOneShot(explode[Random.Range(0, 2)]);
     }
 }

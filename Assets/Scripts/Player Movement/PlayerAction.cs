@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAction : MonoBehaviour {
-
+public class PlayerAction : MonoBehaviour
+{
+    public bool isPlayerOne ;
     public Grid GridRef;
+    private float timeDelay = 0.3f;
 
     PlayerTools tools;
     PlayerGold gold;
@@ -16,22 +18,24 @@ public class PlayerAction : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-        if (Input.GetButtonDown("Dig"))
-                Debug.Log("Hello World");
-
-        //input for digging {
-        // if(this.gold.CanDig()) {
-        // Dig();
-        // }
-        // }
+	void Update ()
+    {
+        if (Input.GetButtonDown("Dig"+ (isPlayerOne ? "1" : "2")))
+        {
+            if (this.gold.CanDig())
+            {
+                Invoke("Dig", timeDelay);
+            }
+        }
 
 
 
     }
 
-    public void TakeDamage() {
+    public void TakeDamage()
+    {
+        GetComponent<PlayerSoundManager>().playHitSoundEffect();
+
         if (this.tools.shield != null) {
             this.tools.shield.nbHitsRemaining--;
 
@@ -47,7 +51,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
     public void Dig() {
-        GridCell cell = this.GridRef.GetCell((int) this.transform.position.x, (int) this.transform.position.z);
+        GridCell cell = this.GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
 
         int goldObtained = 0;
         if (this.tools.shovel != null) {
@@ -57,6 +61,8 @@ public class PlayerAction : MonoBehaviour {
             } else {
                 goldObtained = cell.Dig(0);
             }
+//            GetComponent<PlayerSoundManager>().PlayDiggingSoundEffect(true);
+
         } else {
             //using pickaxe
             if (cell.Type == GridCell.TerrainType.Soil) {
@@ -67,7 +73,10 @@ public class PlayerAction : MonoBehaviour {
                 goldObtained = cell.Dig(0);
             }
         }
-        
+
+        if (goldObtained > 0)
+            GetComponent<PlayerSoundManager>().playGoldSoundEffect();
+
         this.gold.AddGoldToPocket(goldObtained);
     }
 
@@ -76,6 +85,15 @@ public class PlayerAction : MonoBehaviour {
         if(this.tools.tnt == null) {
             return;
         }
+
+        //putting tnt
+        //GetComponent<PlayerSoundManager>().playDiggingSoundEffect(false, 0.5f);
+        
+        //exploding tnt
+        //GetComponent<PlayerSoundManager>().playExplodingSoundEffect();
+
+        //collecting gold
+        //GetComponent<PlayerSoundManager>().playGoldSoundEffect();
 
         int goldObtained = this.GridRef.UseTNT( (int)this.transform.position.x, (int)this.transform.position.z, this.tools.tnt.radius);
         this.gold.AddGoldToPocket(goldObtained);
