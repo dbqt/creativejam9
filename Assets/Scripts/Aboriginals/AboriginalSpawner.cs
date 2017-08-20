@@ -4,12 +4,14 @@ using System.Collections;
 public class AboriginalSpawner: MonoBehaviour
 {
     // Maximal and minimal delay between spawns.
-    public float MinimalDelay = 2.0f;
-    public float MaximalDelay = 5.0f;
+    public float MinimalDelaySpawns = 1.0f;
+    public float MaximalDelaySpawns = 2.0f;
 
     // Choosing the maximum and minimum range of the sides for the cannon to appear.
-    public float minimum = -Random.Range(0.0f, 100f);
-    public float maximum = Random.Range(0.0f, 100f);
+    public float minimumXSide = -Random.Range(0.0f, 1.0f);
+    public float maximumXSide = Random.Range(0.0f, 21.0f);
+    public float minimumZSide = -Random.Range(0.0f, 1.0f);
+    public float maximumZSide = Random.Range(0.0f, 13.0f);
     public Object Aboriginal;
 
     // Use this for initialization
@@ -22,27 +24,27 @@ public class AboriginalSpawner: MonoBehaviour
         while (true)
         {
             // Delay between spawns
-            yield return new WaitForSeconds(Random.Range(MinimalDelay, MaximalDelay));
+            yield return new WaitForSeconds(Random.Range(MinimalDelaySpawns, MaximalDelaySpawns));
 
             int side = Random.Range(0, 4);
 
             switch (side)
             {
-                // side 0 is 12 o'clock side of map (shoots arrows to x positive)
+                // side 0 is 12 o'clock side of map (shoots arrows to x positive - 90 degrees)
                 case 0:
-                    GameObject result0 = (GameObject)Instantiate(Aboriginal, new Vector3(Random.Range(minimum, maximum), 40, 250), Quaternion.Euler(0, 90, 0));
+                    GameObject result0 = (GameObject)Instantiate(Aboriginal, new Vector3(Random.Range(minimumXSide, maximumXSide), 0.3f, 13), Quaternion.Euler(0, 90, 0));
                     break;
                 // side 1 is 3 o'clock side of map (shoots arrows to x positive - 180 degrees)
                 case 1:
-                    GameObject result1 = (GameObject)Instantiate(Aboriginal, new Vector3(250, 40, Random.Range(minimum, maximum)), Quaternion.Euler(0, 180, 0));
+                    GameObject result1 = (GameObject)Instantiate(Aboriginal, new Vector3(21, 0.3f, Random.Range(minimumZSide, maximumZSide)), Quaternion.Euler(0, 180, 0));
                     break;
                 // side 2 is 6 o'clock side of map¸(shoots arrows to x positive - 270 degrees)
                 case 2:
-                    GameObject result2 = (GameObject)Instantiate(Aboriginal, new Vector3(Random.Range(minimum, maximum), 40, -250), Quaternion.Euler(0, 270, 0));
+                    GameObject result2 = (GameObject)Instantiate(Aboriginal, new Vector3(Random.Range(minimumXSide, maximumXSide), 0.3f, -1), Quaternion.Euler(0, 270, 0));
                     break;
                 // side 3 (default) is 9 o'clock side of map (shoots arrows to x positive - 0 degrees)
                 default:
-                    GameObject result3 = (GameObject)Instantiate(Aboriginal, new Vector3(-250, 40, Random.Range(minimum, maximum)), Quaternion.Euler(0, 0, 0));
+                    GameObject result3 = (GameObject)Instantiate(Aboriginal, new Vector3(-1, 0.3f, Random.Range(minimumZSide, maximumZSide)), Quaternion.Euler(0, 0, 0));
                     break;
             }
         }
