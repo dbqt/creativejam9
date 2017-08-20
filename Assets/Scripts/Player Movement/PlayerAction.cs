@@ -47,8 +47,20 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
+        LimitPlayerBounds();
 
+    }
 
+    void LimitPlayerBounds()
+    {
+        Vector3 pos = this.gameObject.transform.position;
+
+        if (pos.x < -0.5f)                  pos.x = -0.5f;
+        if (pos.x > GridRef.SizeX - 0.5f)   pos.x = GridRef.SizeX - 0.5f;
+        if (pos.z < -0.5f)                  pos.z = -0.5f;
+        if (pos.z > GridRef.SizeY - 0.5f)   pos.z = GridRef.SizeY - 0.5f;
+
+        this.gameObject.transform.position = pos;
     }
 
     public void TakeDamage()
