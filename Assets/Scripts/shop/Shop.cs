@@ -53,6 +53,10 @@ public class Shop : MonoBehaviour
         UpdateUI();
     }
 
+    void Update() {
+        UpdateUI();
+    }
+
     void showTools(GameObject player)
     {
         PlayerTools playerTools = player.GetComponent<PlayerTools>();
@@ -65,7 +69,7 @@ public class Shop : MonoBehaviour
     private int getItemPrice(string itemName)
     {
         foreach (ItemTag it in items)
-            if (it.name == itemName)
+            if (it.name.ToLower() == itemName.ToLower())
                 return it.price;
 
         return 0;
@@ -101,7 +105,7 @@ public class Shop : MonoBehaviour
         switch (itemName.ToLower())
         {
            case "shield":
-                if (getItemPrice("shield") <= usableGold)
+                if (shield == 0 && getItemPrice("shield") <= usableGold)
                 {
                     usableGold -= getItemPrice("shield");
                     shield = 1;
@@ -110,7 +114,7 @@ public class Shop : MonoBehaviour
                 break;
 
             case "tnt":
-                if (getItemPrice("tnt") <= usableGold)
+                if (tnt == 0 && getItemPrice("tnt") <= usableGold)
                 {
                     usableGold -= getItemPrice("tnt");
                     tnt = 1;
@@ -119,7 +123,7 @@ public class Shop : MonoBehaviour
                 break;
 
             case "pickaxe":
-                if (getItemPrice("pickaxe") <= usableGold)
+                if ( pickaxe == 0 && getItemPrice("pickaxe") <= usableGold)
                 {
                     usableGold -= getItemPrice("pickaxe");
                     pickaxe = 1;
@@ -129,7 +133,7 @@ public class Shop : MonoBehaviour
                 break;
 
             case "shovel":
-                if (getItemPrice("shovel") <= usableGold)
+                if (shovel == 0 && getItemPrice("shovel") <= usableGold)
                 {
                     usableGold -= getItemPrice("shovel");
                     shovel = 1;
@@ -139,7 +143,7 @@ public class Shop : MonoBehaviour
                 break;
 
              case "bag":
-                if (getItemPrice("bag") <= usableGold)
+                if (bag == 0 && getItemPrice("bag") <= usableGold)
                 {
                     usableGold -= getItemPrice("bag");
                     bag = 1;
@@ -151,6 +155,8 @@ public class Shop : MonoBehaviour
                 Debug.Log("probleme classe Shop : nom " + itemName.ToLower() + " inexistant parmi les noms d'items");
                 break;
         }
+        //Debug.Log("UsableGold after: "+usableGold);
+
 
         if (isPlayerOne) {
             PlayerPrefs.SetInt("UsableGold1", usableGold);
@@ -168,7 +174,9 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("Tnt2", tnt);
         }
 
-        UpdateUI();
+        PlayerPrefs.Save();
+
+        //UpdateUI();
 
         return result;
     }

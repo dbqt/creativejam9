@@ -95,7 +95,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         if (goldObtained > 0)
-            GetComponent<PlayerSoundManager>().playGoldSoundEffect();    
+            GetComponent<PlayerSoundManager>().playGoldSoundEffect();
 
         this.gold.AddGoldToPocket(goldObtained);
     }
