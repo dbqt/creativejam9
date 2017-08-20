@@ -28,8 +28,14 @@ public class PlayerMovement : MonoBehaviour {
         player.Translate(target * translationSpeed, Space.World);
     }
 
-    void stun(float duration){
-        stunDuration = duration;
+    public void stun(float duration)
+    {
+       GetComponent<PlayerSoundManager>().playHitSoundEffect();
+       stunDuration = duration;
+    }
+
+    public bool IsStunned() {
+        return stunDuration > 0;
     }
 }
 

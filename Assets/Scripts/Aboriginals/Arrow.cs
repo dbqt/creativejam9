@@ -5,6 +5,11 @@ public class Arrow : MonoBehaviour
 {
     void OnCollisionEnter(Collision col)
     {
-            Destroy(this.gameObject);
+        PlayerMovement pm = col.gameObject.GetComponent<PlayerMovement>();
+
+        if (pm != null)
+            pm.stun(2);
+
+        Destroy(this.gameObject);
     }
 }
