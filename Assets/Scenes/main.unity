@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 385351991}
   translationSpeed: 1
+  allowMovement: 0
 --- !u!4 &385351991
 Transform:
   m_ObjectHideFlags: 0
@@ -735,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1472137210}
   translationSpeed: 1
+  allowMovement: 0
 --- !u!4 &1472137210
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,6 +1085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a009f4c3af8184eade6619f3942106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player1: {fileID: 385351989}
+  Player2: {fileID: 1472137208}
   CellPrefab: {fileID: 1482350226839240, guid: 1efeebde47b99104786fc9f8d4da1338, type: 2}
   RockPrefab: {fileID: 1634608180952214, guid: c370d6c34ea599d419f1d8a063c38b18, type: 2}
   CactusPrefab: {fileID: 1090796859656586, guid: c257362442a00824ba72c82f79620cb6,

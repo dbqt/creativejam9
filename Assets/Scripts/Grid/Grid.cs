@@ -186,6 +186,8 @@ public class Grid : MonoBehaviour {
     }
 
     public void StartRound() {
+        Player1.GetComponent<PlayerMovement>().allowMovement = true;
+        Player2.GetComponent<PlayerMovement2>().allowMovement = true;
         GameLogic.Instance.StartTimer(GameLogic.Instance.RoundDuration);
         this.internalTimer = GameLogic.Instance.RoundDuration;
         this.roundStarted = true;

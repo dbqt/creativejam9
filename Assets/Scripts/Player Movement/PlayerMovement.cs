@@ -6,11 +6,14 @@ public class PlayerMovement : MonoBehaviour {
 
     public Transform player;
     public float translationSpeed = 1.0f;
+    public bool allowMovement = false;
 
     private float stunDuration = 0;
 
     void FixedUpdate()
     {
+        if (!allowMovement)
+            return;
 
         float verticalValue = Input.GetAxis("Vertical_Player1");
         float horizontalValue = Input.GetAxis("Horizontal_Player1");
