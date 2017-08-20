@@ -130,14 +130,19 @@ public class PlayerAction : MonoBehaviour
         newTnt.transform.position = this.gameObject.transform.position;
         newTnt.GetComponent<TNTBehavior>().SetTNT(this.TNTDelay);
 
+        tnttemppos = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.z);
         Invoke("AftermathTNT", this.TNTDelay);
         
         this.tools.tnt = null;
         
     }
 
+    Vector2 tnttemppos;
+
     public void AftermathTNT() {
-        int goldObtained = this.GridRef.UseTNT( Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z), this.tools.tnt.radius);
+        Debug.Log("gridref: " + this.GridRef);
+
+        int goldObtained = this.GridRef.UseTNT( Mathf.RoundToInt(tnttemppos.x), Mathf.RoundToInt(tnttemppos.y), 1);
         //exploding tnt
         //GetComponent<PlayerSoundManager>().playExplodingSoundEffect();
         //collecting gold

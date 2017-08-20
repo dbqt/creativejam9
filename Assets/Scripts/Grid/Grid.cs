@@ -176,14 +176,24 @@ public class Grid : MonoBehaviour {
     {
         int gold = 0;
 
-        for (int xi = x - 1; xi <= x + 1; xi++)
+        /*for (int xi = x - 1; xi <= x + 1; xi++)
         {
             for (int yi = y - 1; yi <= y + 1; yi++)
             {
                 GridCell gridcellTnt = GetCell(xi, yi);               
                 gold += gridcellTnt.Dig(99);
             }
-        }
+        }*/
+
+        gold += GetCell(x, y).Dig(99);
+        if(y-1 >= 0 && y-1 < SizeY) gold += GetCell(x, y-1).Dig(99);
+        if(y+1 >= 0 && y+1 < SizeY) gold += GetCell(x, y+1).Dig(99);
+        if(x-1 >= 0 && x-1 < SizeX && y-1 >= 0 && y-1 < SizeY) gold += GetCell(x-1, y-1).Dig(99);
+        if(x-1 >= 0 && x-1 < SizeX) gold += GetCell(x, y+1).Dig(99);
+        if(x-1 >= 0 && x-1 < SizeX && y+1 >= 0 && y+1 < SizeY) gold += GetCell(x-1, y+1).Dig(99);
+        if(x+1 >= 0 && x+1 < SizeX && y-1 >= 0 && y-1 < SizeY) gold += GetCell(x+1, y-1).Dig(99);
+        if(x+1 >= 0 && x+1 < SizeX) gold += GetCell(x+1, y).Dig(99);
+        if(x+1 >= 0 && x+1 < SizeX && y+1 >= 0 && y+1 < SizeY) gold += GetCell(x+1, y+1).Dig(99);
 
         return gold;
     }
