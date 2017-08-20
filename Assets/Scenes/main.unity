@@ -3127,8 +3127,8 @@ MonoBehaviour:
   SizeX: 20
   SizeY: 12
   TotalGold: 50
-  NbRocks: 20
-  NbCactus: 14
+  NbRocks: 11
+  NbCactus: 11
   Map: {fileID: 1721456493}
   RedXPrefab: {fileID: 1310220974815796, guid: 5c1829d82449fb144a3b7105dc7cce7f, type: 2}
   MapTexture: {fileID: 380745370}

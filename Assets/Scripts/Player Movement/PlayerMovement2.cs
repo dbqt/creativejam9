@@ -15,8 +15,8 @@ public class PlayerMovement2 : MonoBehaviour {
         if (!allowMovement)
             return;
 
-        float verticalValue = Input.GetAxis("Vertical_Player1");
-        float horizontalValue = Input.GetAxis("Horizontal_Player1");
+        float verticalValue = Input.GetAxis("Vertical_Player2");
+        float horizontalValue = Input.GetAxis("Horizontal_Player2");
         Vector3 target = new Vector3(horizontalValue, 0, verticalValue);
 
         if (stunDuration > 0)
@@ -25,7 +25,9 @@ public class PlayerMovement2 : MonoBehaviour {
             stunDuration -= Time.deltaTime;
         }
 
+        player.LookAt(this.transform.position + target);
         player.Translate(target * translationSpeed, Space.World);
+       
     }
 
     public void stun(float duration)

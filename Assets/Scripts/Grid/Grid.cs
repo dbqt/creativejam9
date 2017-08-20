@@ -174,11 +174,18 @@ public class Grid : MonoBehaviour {
 
     public int UseTNT(int x, int y, int radius = 1)
     {
-        for (int xi = x - 1; xi <= x + 1; xi++)
-            for (int yi = y - 1; yi <= y + 1; yi++)
-                GetCell(xi, yi);
+        int gold = 0;
 
-                return 0;
+        for (int xi = x - 1; xi <= x + 1; xi++)
+        {
+            for (int yi = y - 1; yi <= y + 1; yi++)
+            {
+                GridCell gridcellTnt = GetCell(xi, yi);               
+                gold += gridcellTnt.Dig(99);
+            }
+        }
+
+        return gold;
     }
 
     GameObject[] obs;

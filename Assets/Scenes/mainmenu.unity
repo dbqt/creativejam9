@@ -437,7 +437,7 @@ MonoBehaviour:
   State: 0
   TotalRound: 3
   Round: 1
-  RoundDuration: 45
+  RoundDuration: 20
   confirmation1: 1
   confirmation2: 1
   Timer: {fileID: 660480321}

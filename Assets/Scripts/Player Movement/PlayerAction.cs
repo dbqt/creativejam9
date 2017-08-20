@@ -46,7 +46,10 @@ public class PlayerAction : MonoBehaviour
                 Invoke("Dig", timeDelay);
             }
         }
-
+        if (Input.GetButtonDown("FireTNT_Player" + (isPlayerOne ? "1" : "2")))
+        {
+            UseTNT();
+        }
         LimitPlayerBounds();
 
     }
@@ -85,7 +88,7 @@ public class PlayerAction : MonoBehaviour
     {
         if (GetComponent<PlayerMovement>().IsStunned()) return;
 
-        GridCell cell = this.GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
+        GridCell cell = GridRef.GetCell(Mathf.RoundToInt(this.transform.position.x), Mathf.RoundToInt(this.transform.position.z));
 
         int goldObtained = 0;
         if (this.tools.shovel != null) {
@@ -124,6 +127,7 @@ public class PlayerAction : MonoBehaviour
         //putting tnt
         GetComponent<PlayerSoundManager>().playDiggingSoundEffect(false, 0.5f);
         GameObject newTnt = Instantiate(TNTPrefab) as GameObject;
+        newTnt.transform.position = this.gameObject.transform.position;
         newTnt.GetComponent<TNTBehavior>().SetTNT(this.TNTDelay);
 
         Invoke("AftermathTNT", this.TNTDelay);
