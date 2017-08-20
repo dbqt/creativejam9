@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
@@ -7,8 +8,19 @@ using System.IO;
 public class Shop : MonoBehaviour
 {
 
+    const string checkmark = "✔";
     public ShopItemUI[] ShopItems;
     public List<ItemTag> items;
+
+    [Header("Player 1")]
+    public Text P1Score;
+    public Text P1Gold;
+    public Text[] P1Items;
+
+    [Header("Player 2")]
+    public Text P2Score;
+    public Text P2Gold;
+    public Text[] P2Items;
 
     public bool showPickAxe, showShield, showShovel, showTNT;
 
@@ -109,6 +121,7 @@ public class Shop : MonoBehaviour
                 {
                     usableGold -= getItemPrice("pickaxe");
                     pickaxe = 1;
+                    shovel = 0;
                     result = true;
                 }
                 break;
@@ -118,6 +131,7 @@ public class Shop : MonoBehaviour
                 {
                     usableGold -= getItemPrice("shovel");
                     shovel = 1;
+                    pickaxe = 0;
                     result = true;
                 }
                 break;
@@ -155,6 +169,56 @@ public class Shop : MonoBehaviour
         return result;
     }
 
+    public void UpdateUI() {
+        int score1 = 0;
+        int usableGold1 = 0;
+        int shield1 = 0;
+        int pickaxe1 = 0;
+        int shovel1 = 0;
+        int bag1 = 0;
+        int tnt1 = 0;
+
+        int score2 = 0;
+        int usableGold2 = 0;
+        int shield2 = 0;
+        int pickaxe2 = 0;
+        int shovel2 = 0;
+        int bag2 = 0;
+        int tnt2 = 0;
+        
+        score1 = PlayerPrefs.GetInt("TotalGold1");
+        usableGold1 = PlayerPrefs.GetInt("UsableGold1");
+        shield1 = PlayerPrefs.GetInt("Shield1");
+        pickaxe1 = PlayerPrefs.GetInt("Pickaxe1");
+        shovel1 = PlayerPrefs.GetInt("Shovel1");
+        bag1 = PlayerPrefs.GetInt("Bag1");
+        tnt1 = PlayerPrefs.GetInt("Tnt1");
+
+        this.P1Score.text = "Score: "+score1;
+        this.P1Gold.text = "Gold: "+usableGold1;
+        P1Items[items.FindIndex(o => o.name.ToLower() == "shield")].text = shield1 == 1 ? checkmark : "x";
+        P1Items[items.FindIndex(o => o.name.ToLower() == "tnt")].text = tnt1 == 1 ? checkmark : "x";
+        P1Items[items.FindIndex(o => o.name.ToLower() == "pickaxe")].text = pickaxe1 == 1 ? checkmark : "x";
+        P1Items[items.FindIndex(o => o.name.ToLower() == "shovel")].text = shovel1 == 1 ? checkmark : "x";
+        P1Items[items.FindIndex(o => o.name.ToLower() == "bag")].text = bag1 == 1 ? checkmark : "x";
+
+        score2 = PlayerPrefs.GetInt("TotalGold2");
+        usableGold2 = PlayerPrefs.GetInt("UsableGold2");
+        shield2 = PlayerPrefs.GetInt("Shield2");
+        pickaxe2 = PlayerPrefs.GetInt("Pickaxe2");
+        shovel2 = PlayerPrefs.GetInt("Shovel2");
+        bag2 = PlayerPrefs.GetInt("Bag2");
+        tnt2 = PlayerPrefs.GetInt("Tnt2");
+
+        this.P2Score.text = "Score: "+score2;
+        this.P2Gold.text = "Gold: "+usableGold2;
+        P2Items[items.FindIndex(o => o.name.ToLower() == "shield")].text = shield2 == 1 ? checkmark : "x";
+        P2Items[items.FindIndex(o => o.name.ToLower() == "tnt")].text = tnt2 == 1 ? checkmark : "x";
+        P2Items[items.FindIndex(o => o.name.ToLower() == "pickaxe")].text = pickaxe2 == 1 ? checkmark : "x";
+        P2Items[items.FindIndex(o => o.name.ToLower() == "shovel")].text = shovel2 == 1 ? checkmark : "x";
+        P2Items[items.FindIndex(o => o.name.ToLower() == "bag")].text = bag2 == 1 ? checkmark : "x";  
+    }
+
     
 }
 
@@ -162,4 +226,4 @@ public class Shop : MonoBehaviour
 public struct ShopItemUI {
         public Text Name;
         public Text Price;
-    }
+}
