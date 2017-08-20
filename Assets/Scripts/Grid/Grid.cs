@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour {
 
+    [Header("Players")]
+    public GameObject Player1;
+    public GameObject Player2;
+
     [Header("Grid")]
     public GameObject CellPrefab;
     public GameObject RockPrefab;
@@ -133,6 +137,9 @@ public class Grid : MonoBehaviour {
             mark.transform.localRotation = Quaternion.identity;
         }
 
+        Player1.GetComponent<PlayerGold>().LoadData();
+        Player2.GetComponent<PlayerGold>().LoadData();
+
         ShowHideMap();
 	}
 
@@ -186,6 +193,8 @@ public class Grid : MonoBehaviour {
 
     public void EndRound() {
         this.roundStarted = false;
+        Player1.GetComponent<PlayerGold>().SaveData();
+        Player2.GetComponent<PlayerGold>().SaveData();
         GameLogic.Instance.EndRound();
     }
 

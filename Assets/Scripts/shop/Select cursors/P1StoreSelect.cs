@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class P1StoreSelect : MonoBehaviour {
 
     public Text storeCursor_Player1;
+
+    public Shop mainShop; 
+
     private const float positionX = -573.04f;
     private const float positionZ = 0f;
 
@@ -20,6 +24,8 @@ public class P1StoreSelect : MonoBehaviour {
     }
    
 	void Update () {
+
+        
 
         if (!allowAction)
             return;
@@ -70,5 +76,11 @@ public class P1StoreSelect : MonoBehaviour {
     void UnblockCursor()
     {
         allowAction = true;
+    }
+
+    void Select() {
+        var item = mainShop.items.ElementAt(index);
+        
+        mainShop.buyItem(item.name, true);
     }
 }

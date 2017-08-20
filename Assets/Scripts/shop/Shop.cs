@@ -8,7 +8,7 @@ public class Shop : MonoBehaviour
 {
 
     public ShopItemUI[] ShopItems;
-    List<ItemTag> items;
+    public List<ItemTag> items;
 
     public bool showPickAxe, showShield, showShovel, showTNT;
 
@@ -57,53 +57,102 @@ public class Shop : MonoBehaviour
         return 0;
     }
 
-    public bool buyItem(string itemName, GameObject player)
+    public bool buyItem(string itemName, bool isPlayerOne)
     {
-        PlayerGold playerGold = player.GetComponent<PlayerGold>();
-        PlayerTools playerTools = player.GetComponent<PlayerTools>();
 
+        int usableGold = 0;
+        int shield = 0;
+        int pickaxe = 0;
+        int shovel = 0;
+        int bag = 0;
+        int tnt = 0;
+        
+        if (isPlayerOne) {
+            usableGold = PlayerPrefs.GetInt("UsableGold1");
+            shield = PlayerPrefs.GetInt("Shield1");
+            pickaxe = PlayerPrefs.GetInt("Pickaxe1");
+            shovel = PlayerPrefs.GetInt("Shovel1");
+            bag = PlayerPrefs.GetInt("Bag1");
+            tnt = PlayerPrefs.GetInt("Tnt1");
+        } else {
+            usableGold = PlayerPrefs.GetInt("UsableGold2");
+            shield = PlayerPrefs.GetInt("Shield2");
+            pickaxe = PlayerPrefs.GetInt("Pickaxe2");
+            shovel = PlayerPrefs.GetInt("Shovel2");
+            bag = PlayerPrefs.GetInt("Bag2");
+            tnt = PlayerPrefs.GetInt("Tnt2");
+        }
+
+        bool result = false;
         switch (itemName.ToLower())
         {
            case "shield":
-                if (getItemPrice("shield") <= playerGold.UsableGold)
+                if (getItemPrice("shield") <= usableGold)
                 {
-                    playerGold.SpendGold(getItemPrice("shield"));
-                    playerTools.shield = new Shield();
-                    return true;
+                    usableGold -= getItemPrice("shield");
+                    shield = 1;
+                    result = true;
                 }
-                else return false;
+                break;
 
             case "tnt":
-                if (getItemPrice("tnt") <= playerGold.UsableGold)
+                if (getItemPrice("tnt") <= usableGold)
                 {
-                    playerGold.SpendGold(getItemPrice("tnt"));
-                    playerTools.tnt = new TNT();
-                    return true;
+                    usableGold -= getItemPrice("tnt");
+                    tnt = 1;
+                    result = true;
                 }
-                else return false;
+                break;
 
             case "pickaxe":
-                if (getItemPrice("pickaxe") <= playerGold.UsableGold)
+                if (getItemPrice("pickaxe") <= usableGold)
                 {
-                    playerGold.SpendGold(getItemPrice("pickaxe"));
-                    playerTools.pickAxe = new PickAxe();
-                    return true;
+                    usableGold -= getItemPrice("pickaxe");
+                    pickaxe = 1;
+                    result = true;
                 }
-                else return false;
+                break;
 
             case "shovel":
-                if (getItemPrice("shovel") <= playerGold.UsableGold)
+                if (getItemPrice("shovel") <= usableGold)
                 {
-                    playerGold.SpendGold(getItemPrice("shovel"));
-                    playerTools.shovel = new Shovel();
-                    return true;
+                    usableGold -= getItemPrice("shovel");
+                    shovel = 1;
+                    result = true;
                 }
-                else return false;
+                break;
+
+             case "bag":
+                if (getItemPrice("bag") <= usableGold)
+                {
+                    usableGold -= getItemPrice("bag");
+                    bag = 1;
+                    result = true;
+                }
+                break;
 
             default:
                 Debug.Log("probleme classe Shop : nom " + itemName.ToLower() + " inexistant parmi les noms d'items");
-                return false;
+                break;
         }
+
+        if (isPlayerOne) {
+            PlayerPrefs.SetInt("UsableGold1", usableGold);
+            PlayerPrefs.SetInt("Shield1", shield);
+            PlayerPrefs.SetInt("Pickaxe1", pickaxe);
+            PlayerPrefs.SetInt("Shovel1", shovel);
+            PlayerPrefs.SetInt("Bag1", bag);
+            PlayerPrefs.SetInt("Tnt1", tnt);
+        } else {
+            PlayerPrefs.SetInt("UsableGold2", usableGold);
+            PlayerPrefs.SetInt("Shield2", shield);
+            PlayerPrefs.SetInt("Pickaxe2", pickaxe);
+            PlayerPrefs.SetInt("Shovel2", shovel);
+            PlayerPrefs.SetInt("Bag2", bag);
+            PlayerPrefs.SetInt("Tnt2", tnt);
+        }
+
+        return result;
     }
 
     

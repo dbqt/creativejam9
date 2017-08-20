@@ -8,5 +8,6 @@ public class PlayerTools : MonoBehaviour
     public Shield shield;
     public Shovel shovel;
     public TNT tnt;
+    public Bag bag;
 
 }

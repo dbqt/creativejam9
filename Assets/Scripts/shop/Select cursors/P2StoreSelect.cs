@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class P2StoreSelect : MonoBehaviour
 {
+    public Shop mainShop;
 
     public Text storeCursor_Player2;
     private const float positionX = 573.0399f;
@@ -72,5 +74,11 @@ public class P2StoreSelect : MonoBehaviour
     void UnblockCursor()
     {
         allowAction = true;
+    }
+
+    void Select() {
+        var item = mainShop.items.ElementAt(index);
+        
+        mainShop.buyItem(item.name, false);
     }
 }
